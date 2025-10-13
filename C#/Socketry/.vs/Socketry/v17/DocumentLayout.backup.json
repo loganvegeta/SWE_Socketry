@@ -1,0 +1,366 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED49F55-2745-40CE-8ED5-A4D80B36D484}|Executive\\Executive.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\executive\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED49F55-2745-40CE-8ED5-A4D80B36D484}|Executive\\Executive.csproj|solutionrelative:executive\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socketry\\socketry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|solutionrelative:socketry\\socketry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socketry\\tunnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|solutionrelative:socketry\\tunnel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85551B5-AE13-4C60-84D6-D4AD2643D272}|packetparser\\packetparser.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\packetparser\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85551B5-AE13-4C60-84D6-D4AD2643D272}|packetparser\\packetparser.csproj|solutionrelative:packetparser\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\sockettcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\sockettcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\serversockettcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\serversockettcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED49F55-2745-40CE-8ED5-A4D80B36D484}|Executive\\Executive.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\executive\\dummyclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED49F55-2745-40CE-8ED5-A4D80B36D484}|Executive\\Executive.csproj|solutionrelative:executive\\dummyclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socketry\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|solutionrelative:socketry\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socketry\\callidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|solutionrelative:socketry\\callidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socketry\\socketryclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|solutionrelative:socketry\\socketryclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\socketdebug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\socketdebug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\selector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\selector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\isocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\isocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\selectionkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\selectionkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ED49F55-2745-40CE-8ED5-A4D80B36D484}|Executive\\Executive.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\executive\\dummyclass2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED49F55-2745-40CE-8ED5-A4D80B36D484}|Executive\\Executive.csproj|solutionrelative:executive\\dummyclass2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socket\\iserversocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFC5A70-F260-4BB9-A37A-7C61EBEFCE7B}|socket\\socket.csproj|solutionrelative:socket\\iserversocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85551B5-AE13-4C60-84D6-D4AD2643D272}|packetparser\\packetparser.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\packetparser\\parseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85551B5-AE13-4C60-84D6-D4AD2643D272}|packetparser\\packetparser.csproj|solutionrelative:packetparser\\parseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A85551B5-AE13-4C60-84D6-D4AD2643D272}|packetparser\\packetparser.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\packetparser\\packettype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A85551B5-AE13-4C60-84D6-D4AD2643D272}|packetparser\\packetparser.csproj|solutionrelative:packetparser\\packettype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|d:\\college\\sem 7\\software_engineering\\socketry\\socketry\\socketpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F74B713-8707-493C-BD73-4B785B35518A}|socketry\\socketry.csproj|solutionrelative:socketry\\socketpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\Executive\\Program.cs",
+              "RelativeDocumentMoniker": "Executive\\Program.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\Executive\\Program.cs",
+              "RelativeToolTip": "Executive\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAWwCkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T09:45:03.186Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{bdada759-5db7-402f-96e3-402b17c8c5b4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Link.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\Link.cs",
+              "RelativeDocumentMoniker": "socketry\\Link.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\Link.cs",
+              "RelativeToolTip": "socketry\\Link.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAYwKkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:40:51.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SocketTCP.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\SocketTCP.cs",
+              "RelativeDocumentMoniker": "socket\\SocketTCP.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\SocketTCP.cs",
+              "RelativeToolTip": "socket\\SocketTCP.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:45:49.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tunnel.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\Tunnel.cs",
+              "RelativeDocumentMoniker": "socketry\\Tunnel.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\Tunnel.cs",
+              "RelativeToolTip": "socketry\\Tunnel.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAWwDwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:00:43.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SocketDebug.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\SocketDebug.cs",
+              "RelativeDocumentMoniker": "socket\\SocketDebug.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\SocketDebug.cs",
+              "RelativeToolTip": "socket\\SocketDebug.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:46:20.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Socketry.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\Socketry.cs",
+              "RelativeDocumentMoniker": "socketry\\Socketry.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\Socketry.cs",
+              "RelativeToolTip": "socketry\\Socketry.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAWwHMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:00:54.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DummyClass.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\Executive\\DummyClass.cs",
+              "RelativeDocumentMoniker": "Executive\\DummyClass.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\Executive\\DummyClass.cs",
+              "RelativeToolTip": "Executive\\DummyClass.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T09:46:16.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServerSocketTCP.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\ServerSocketTCP.cs",
+              "RelativeDocumentMoniker": "socket\\ServerSocketTCP.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\ServerSocketTCP.cs",
+              "RelativeToolTip": "socket\\ServerSocketTCP.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:55:19.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CallIdentifier.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\CallIdentifier.cs",
+              "RelativeDocumentMoniker": "socketry\\CallIdentifier.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\CallIdentifier.cs",
+              "RelativeToolTip": "socketry\\CallIdentifier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T11:58:09.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Packet.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\packetparser\\Packet.cs",
+              "RelativeDocumentMoniker": "packetparser\\Packet.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\packetparser\\Packet.cs",
+              "RelativeToolTip": "packetparser\\Packet.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:40:22.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Selector.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\Selector.cs",
+              "RelativeDocumentMoniker": "socket\\Selector.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\Selector.cs",
+              "RelativeToolTip": "socket\\Selector.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAkwDEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:52:51.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SocketryClient.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\SocketryClient.cs",
+              "RelativeDocumentMoniker": "socketry\\SocketryClient.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\SocketryClient.cs",
+              "RelativeToolTip": "socketry\\SocketryClient.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwBgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T02:00:57.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ISocket.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\ISocket.cs",
+              "RelativeDocumentMoniker": "socket\\ISocket.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\ISocket.cs",
+              "RelativeToolTip": "socket\\ISocket.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:46:18.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SelectionKey.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\SelectionKey.cs",
+              "RelativeDocumentMoniker": "socket\\SelectionKey.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\SelectionKey.cs",
+              "RelativeToolTip": "socket\\SelectionKey.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:52:25.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DummyClass2.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\Executive\\DummyClass2.cs",
+              "RelativeDocumentMoniker": "Executive\\DummyClass2.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\Executive\\DummyClass2.cs",
+              "RelativeToolTip": "Executive\\DummyClass2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T10:00:16.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IServerSocket.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\IServerSocket.cs",
+              "RelativeDocumentMoniker": "socket\\IServerSocket.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socket\\IServerSocket.cs",
+              "RelativeToolTip": "socket\\IServerSocket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:46:16.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ParseResult.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\packetparser\\ParseResult.cs",
+              "RelativeDocumentMoniker": "packetparser\\ParseResult.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\packetparser\\ParseResult.cs",
+              "RelativeToolTip": "packetparser\\ParseResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:44:41.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PacketType.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\packetparser\\PacketType.cs",
+              "RelativeDocumentMoniker": "packetparser\\PacketType.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\packetparser\\PacketType.cs",
+              "RelativeToolTip": "packetparser\\PacketType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T01:42:15.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SocketPacket.cs",
+              "DocumentMoniker": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\SocketPacket.cs",
+              "RelativeDocumentMoniker": "socketry\\SocketPacket.cs",
+              "ToolTip": "D:\\COLLEGE\\SEM 7\\SOFTWARE_ENGINEERING\\Socketry\\socketry\\SocketPacket.cs",
+              "RelativeToolTip": "socketry\\SocketPacket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T12:42:37.462Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
