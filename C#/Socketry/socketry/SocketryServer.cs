@@ -1,11 +1,6 @@
 ﻿using packetparser;
 using socket;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace socketry
 {
@@ -13,12 +8,18 @@ namespace socketry
     {
         private static short LINK_PORT_STATUS = (short)10000;
 
+        /// <summary>
+        /// COnstructor for socketry class.
+        /// </summary>
+        /// <param name="serverPort">the port to run the server on</param>
+        /// <param name="_procedures">the list of procedures</param>
         public SocketryServer(int serverPort, Dictionary<String, Func<byte[], byte[]>> _procedures)
         {
             this.SetProcedures(_procedures);
 
             IServerSocket initServer = StartAt(serverPort);
-            if (initServer == null) { 
+            if (initServer == null)
+            {
                 // throw exception
             }
             initServer.ConfigureBlocking(true);
@@ -30,7 +31,7 @@ namespace socketry
 
             Packet initPacket = link.GetPacket();
 
-            if(!(initPacket is not Packet.Init))
+            if (!(initPacket is not Packet.Init))
             {
                 Console.WriteLine("Expected init packet...");
                 //throw exception
@@ -38,19 +39,20 @@ namespace socketry
 
             byte[] socketsPerTunnel = ((Packet.Init)initPacket).channels;
 
-            List<IServerSocket> serverSockets = new List<IServerSocket> ();
-            List<short> ports = new List<short> ();
+            List<IServerSocket> serverSockets = new List<IServerSocket>();
+            List<short> ports = new List<short>();
             short currentPort = LINK_PORT_STATUS;
 
-            foreach(byte socketNum in socketsPerTunnel)
+            foreach (byte socketNum in socketsPerTunnel)
             {
-                for(short i = 0; i < socketNum; i++)
+                for (short i = 0; i < socketNum; i++)
                 {
                     while (true)
                     {
                         currentPort++;
                         IServerSocket serverSocket = StartAt(currentPort);
-                        if (serverSocket == null) { 
+                        if (serverSocket == null)
+                        {
                             continue;
                         }
 
@@ -62,7 +64,7 @@ namespace socketry
             }
 
             short[] portsArray = new short[ports.Count];
-            for(int i = 0; i < ports.Count; i++)
+            for (int i = 0; i < ports.Count; i++)
             {
                 portsArray[i] = ports[i];
             }
@@ -70,11 +72,11 @@ namespace socketry
             Packet acceptPacket = new Packet.Accept(portsArray);
             link.SendPacket(acceptPacket);
 
-            List<ISocket> clientSockets = new List<ISocket> ();
+            List<ISocket> clientSockets = new List<ISocket>();
 
             foreach (IServerSocket serverSocket in serverSockets)
             {
-                serverSocket.ConfigureBlocking (true);
+                serverSocket.ConfigureBlocking(true);
                 ISocket clientChannel = serverSocket.Accept();
                 clientSockets.Add(clientChannel);
             }
@@ -83,6 +85,11 @@ namespace socketry
 
         }
 
+        /// <summary>
+        /// Function to set the tunnels
+        /// </summary>
+        /// <param name="sockets">the list of sockets</param>
+        /// <param name="socketsPerTunnel">the list of tunnels</param>
         public void SetTunnelsFromSockets(ISocket[] sockets, byte[] socketsPerTunnel)
         {
             List<Tunnel> tunnels = new List<Tunnel>();
@@ -104,6 +111,11 @@ namespace socketry
             }
         }
 
+        /// <summary>
+        /// Function to start the server at given port
+        /// </summary>
+        /// <param name="serverPort">THe port to start at</param>
+        /// <returns>The server socket</returns>
         private IServerSocket StartAt(int serverPort)
         {
             IServerSocket serverSocketChannel;
@@ -113,7 +125,8 @@ namespace socketry
                 serverSocketChannel.Bind(new IPEndPoint(IPAddress.Loopback, serverPort));
                 return serverSocketChannel;
             }
-            catch (Exception e) { 
+            catch (Exception e)
+            {
                 Console.WriteLine(e.ToString());
             }
             return null;

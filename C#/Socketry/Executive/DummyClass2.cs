@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Executive
+﻿namespace Executive
 {
     public class DummyClass2
     {
@@ -14,7 +7,7 @@ namespace Executive
             return System.Text.Encoding.UTF8.GetBytes("Hello World\n");
         }
 
-        public byte[] AddSerialize(int a,int b)
+        public byte[] AddSerialize(int a, int b)
         {
             byte[] bytes = new byte[8];
             byte[] aBytes = BitConverter.GetBytes(a);

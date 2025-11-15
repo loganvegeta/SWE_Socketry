@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net.Sockets;
-using System.Threading.Tasks;
+﻿using System.Net.Sockets;
 
 namespace socket
 {
@@ -15,7 +10,12 @@ namespace socket
         Dictionary<Socket, Object> ReadRegisteredSockets;
         Dictionary<Socket, Object> WriteRegisteredSockets;
         Dictionary<Socket, Object> ConnectRegisteredSockets;
-        private Selector() {}
+        private Selector() { }
+
+        /// <summary>
+        /// Function to open the selector
+        /// </summary>
+        /// <returns>the selector</returns>
         public static Selector Open()
         {
             Selector sel = new Selector();
@@ -28,6 +28,13 @@ namespace socket
             return sel;
         }
 
+        /// <summary>
+        /// Function to register the selection key
+        /// </summary>
+        /// <param name="sock">the selector</param>
+        /// <param name="ops">the operation to register to</param>
+        /// <param name="att">the attrbute to register to</param>
+        /// <returns></returns>
         public SelectionKey register(Socket sock, int ops, Object att)
         {
             switch (ops)
@@ -48,16 +55,17 @@ namespace socket
                     Console.WriteLine($"Unknown operation {ops}");
                     break;
             }
-            // meh. is this really required?
-            // its wrong but nowhere its used so well ignore it for now
             SelectionKey key = new SelectionKey();
             key.setAtt(att);
             return key;
         }
 
+        /// <summary>
+        /// Function to select the socket.
+        /// </summary>
+        /// <returns>the number of selectable sockets</returns>
         public int Select()
         {
-            // copy lists :(
             List<Socket> CheckRead = new List<Socket>(ReadSocketList);
             List<Socket> CheckWrite = new List<Socket>(WritesocketList);
             List<Socket> CheckConnect = new List<Socket>(ConnectsocketList);
@@ -65,6 +73,10 @@ namespace socket
             return CheckRead.Count + CheckWrite.Count + CheckConnect.Count;
         }
 
+        /// <summary>
+        /// Function to return list of all selected keys
+        /// </summary>
+        /// <returns>list of selected keys</returns>
         public ISet<SelectionKey> SelectedKeys()
         {
             // this is peak.
@@ -73,19 +85,22 @@ namespace socket
             List<Socket> CheckConnect = new List<Socket>(ConnectsocketList);
             Socket.Select(CheckRead, CheckWrite, CheckConnect, 1000);
             ISet<SelectionKey> keys = new HashSet<SelectionKey>();
-            foreach (Socket s in CheckRead) {
+            foreach (Socket s in CheckRead)
+            {
                 SelectionKey key = new SelectionKey();
                 key.setReadable(true);
                 key.setAtt(ReadRegisteredSockets[s]);
                 keys.Add(key);
             }
-            foreach (Socket s in CheckWrite) {
+            foreach (Socket s in CheckWrite)
+            {
                 SelectionKey key = new SelectionKey();
                 key.setWritable(true);
                 key.setAtt(WriteRegisteredSockets[s]);
                 keys.Add(key);
             }
-            foreach (Socket s in CheckConnect) {
+            foreach (Socket s in CheckConnect)
+            {
                 SelectionKey key = new SelectionKey();
                 key.setConnectable(true);
                 key.setAtt(ConnectRegisteredSockets[s]);

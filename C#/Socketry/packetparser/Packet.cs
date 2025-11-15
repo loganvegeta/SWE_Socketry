@@ -1,7 +1,11 @@
-﻿using System.Runtime.InteropServices;
-
-namespace packetparser
+﻿namespace packetparser
 {
+    /// <summary>
+    /// Function to create a RPC packet.
+    /// </summary>
+    /// <param name="fnId">the function id</param>
+    /// <param name="callId">the call id</param>
+    /// <param name="arguments">the arguments to pass</param>
     record CREPacket(byte fnId, byte callId, byte[] arguments)
     {
         public static CREPacket Parse(byte[] data)
@@ -14,8 +18,17 @@ namespace packetparser
             return new CREPacket(fnId, callId, arguments);
         }
     }
+    /// <summary>
+    /// Interface for Packet.
+    /// </summary>
     public interface Packet
     {
+        /// <summary>
+        /// The function to parse a given packet.
+        /// </summary>
+        /// <param name="data">the data to be parsed</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         static Packet Parse(byte[] data)
         {
             byte type = data[0];
@@ -43,6 +56,12 @@ namespace packetparser
             }
         }
 
+        /// <summary>
+        /// Function to create new packets.
+        /// </summary>
+        /// <param name="packet">the type of packet to create</param>
+        /// <returns>The new packet with values</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         static MemoryStream Serialize(Packet packet)
         {
             int size = 1 + packet switch
@@ -56,7 +75,7 @@ namespace packetparser
                 Packet.Pong => 0,
                 _ => throw new ArgumentOutOfRangeException()
             };
-             MemoryStream buffer = new MemoryStream(size);
+            MemoryStream buffer = new MemoryStream(size);
             BinaryWriter writer = new BinaryWriter(buffer);
 
             switch (packet)
@@ -85,7 +104,7 @@ namespace packetparser
                     break;
                 case Packet.Accept accept:
                     writer.Write(PacketType.ACCEPT);
-                    foreach(short port in accept.ports)
+                    foreach (short port in accept.ports)
                     {
                         writer.Write(port);
                     }
@@ -104,6 +123,12 @@ namespace packetparser
         static ThreadLocal<MemoryStream> BUFFER_CACHE =
     new ThreadLocal<MemoryStream>(() => new MemoryStream(1024 * 1024 * 1024));
 
+        /// <summary>
+        /// Function to creaet packet form the cache.
+        /// </summary>
+        /// <param name="packet">The packet to be created</param>
+        /// <returns>The new packet</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         static MemoryStream serializeFast(Packet packet)
         {
             int size = 1 + packet switch
@@ -163,7 +188,13 @@ namespace packetparser
             return buffer;
         }
 
-        record Call(byte fnId, byte callId, byte[] arguments):Packet
+        /// <summary>
+        /// Function to create a CALL packet
+        /// </summary>
+        /// <param name="fnId"> the function id</param>
+        /// <param name="callId"> the call id </param>
+        /// <param name="arguments"> the arguments to pass </param>
+        record Call(byte fnId, byte callId, byte[] arguments) : Packet
         {
             public static Call Parse(byte[] data)
             {
@@ -172,6 +203,12 @@ namespace packetparser
             }
         }
 
+        /// <summary>
+        /// Function to create a RESULT packet
+        /// </summary>
+        /// <param name="fnId"> the function id</param>
+        /// <param name="callId"> the call id </param>
+        /// <param name="response"> the response of the arguments </param>
         record Result(byte fnId, byte callId, byte[] response) : Packet
         {
             public static Result Parse(byte[] data)
@@ -181,6 +218,12 @@ namespace packetparser
             }
         }
 
+        /// <summary>
+        /// Function to create a ERROR packet
+        /// </summary>
+        /// <param name="fnId"> the function id</param>
+        /// <param name="callId"> the call id </param>
+        /// <param name="error"> the error of the packet </param>
         record Error(byte fnId, byte callId, byte[] error) : Packet
         {
             public static Error Parse(byte[] data)
@@ -190,8 +233,16 @@ namespace packetparser
             }
         }
 
-        record Init(byte[] channels):Packet { }
+        /// <summary>
+        /// Function to create a INIT packet
+        /// </summary>
+        /// <param name="channels"> the number of channels </param>
+        record Init(byte[] channels) : Packet { }
 
+        /// <summary>
+        /// Function to create a ACCEPT packet
+        /// </summary>
+        /// <param name="ports"> the list of ports </param>
         record Accept(short[] ports) : Packet
         {
             public static Accept Parse(byte[] data)
@@ -205,12 +256,18 @@ namespace packetparser
             }
         }
 
+        /// <summary>
+        /// Function to create a PING packet
+        /// </summary>
         class Ping : Packet
         {
             public static Ping Instance = new Ping();
             private Ping() { }
         }
 
+        /// <summary>
+        /// Function to create a PONG packet
+        /// </summary>
         class Pong : Packet
         {
             public static Pong Instance = new Pong();

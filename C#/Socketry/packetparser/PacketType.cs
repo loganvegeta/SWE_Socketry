@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace packetparser
+﻿namespace packetparser
 {
+    /// <summary>
+    /// The enum of all packet types.
+    /// </summary>
     public class PacketType
     {
         public const byte CALL = 1;

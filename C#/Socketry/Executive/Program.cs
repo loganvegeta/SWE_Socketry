@@ -14,7 +14,7 @@ namespace Executive
                 DummyClass dummy = new DummyClass();
                 procedures["Add"] = dummy.AddWrapper;
 
-                SocketryClient client = new SocketryClient(new byte[] {1,1,1}, 60000, procedures);
+                SocketryClient client = new SocketryClient(new byte[] { 1, 1, 1 }, 60000, procedures);
                 Console.WriteLine("Client Started...");
                 //client.GetRemoteProceduresNames();
 
@@ -36,7 +36,7 @@ namespace Executive
                 SocketryServer server = new SocketryServer(60000, procedures);
                 Console.WriteLine("Server started...");
 
-                Thread handler = new Thread(() =>  server.ListenLoop());
+                Thread handler = new Thread(() => server.ListenLoop());
                 handler.Start();
 
                 byte[] result = server.MakeRemoteCall(server.GetRemoteProceduresId("Add"), dummy2.AddSerialize(4, 3), 2).Task.Result;

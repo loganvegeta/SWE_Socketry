@@ -1,16 +1,17 @@
 ﻿using packetparser;
-using socket;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace socketry
 {
     public class SocketryClient : Socketry
     {
-        public SocketryClient(byte[] socketPerTunnel, int serverPort, Dictionary<String, Func<byte[], byte[]>> _procedures) 
+        /// <summary>
+        /// Constructor for SocketryClient class.
+        /// </summary>
+        /// <param name="socketPerTunnel">te list of sockets per tunnel</param>
+        /// <param name="serverPort">the server port</param>
+        /// <param name="_procedures">the list of procedures</param>
+        /// <exception cref="Exception">the exception occured</exception>
+        public SocketryClient(byte[] socketPerTunnel, int serverPort, Dictionary<String, Func<byte[], byte[]>> _procedures)
         {
             this.SetProcedures(_procedures);
 
@@ -22,7 +23,7 @@ namespace socketry
             Console.WriteLine("Sent init...");
             Packet acceptPacket = link.GetPacket() as Packet.Accept;
 
-            if (!(acceptPacket != null)) 
+            if (!(acceptPacket != null))
             {
                 throw new Exception("Expected accept packet");
             }
@@ -33,13 +34,19 @@ namespace socketry
             this.SetTunnelsFromPorts(ports, socketPerTunnel);
         }
 
-        public void SetTunnelsFromPorts(short[] ports, byte[] socketsPerTunnel) {
+        /// <summary>
+        /// The function to create tunnel form ports
+        /// </summary>
+        /// <param name="ports">the list of ports</param>
+        /// <param name="socketsPerTunnel">the list of tunnels</param>
+        public void SetTunnelsFromPorts(short[] ports, byte[] socketsPerTunnel)
+        {
             List<Tunnel> tunnels = new List<Tunnel>();
             byte LastSocketNum = 0;
             foreach (byte socketNum in socketsPerTunnel)
             {
                 List<short> portsForTunnel = new List<short>();
-                for(int i=LastSocketNum; i < LastSocketNum + socketNum; i++)
+                for (int i = LastSocketNum; i < LastSocketNum + socketNum; i++)
                 {
                     portsForTunnel.Add(ports[i]);
                 }

@@ -1,9 +1,5 @@
 ﻿using packetparser;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace socketry
 {
@@ -15,6 +11,10 @@ namespace socketry
 
         public Tunnel[] _tunnels;
 
+        /// <summary>
+        /// Function to get all procedures.
+        /// </summary>
+        /// <returns>the list of all procedures</returns>
         public byte[] GetProcedures()
         {
             MemoryStream buffer = new MemoryStream(1024);
@@ -30,6 +30,10 @@ namespace socketry
             return result;
         }
 
+        /// <summary>
+        /// Function to set all the procedures.
+        /// </summary>
+        /// <param name="procedures">the list of all procedures</param>
         public void SetProcedures(Dictionary<String, Func<byte[], byte[]>> procedures)
         {
             _procedures = procedures;
@@ -38,7 +42,7 @@ namespace socketry
             _procedureNames[0] = "GetProcedures";
 
             int index = 1;
-            foreach(String key in _procedures.Keys)
+            foreach (String key in _procedures.Keys)
             {
                 if (!key.Equals("GetProcedures"))
                 {
@@ -48,25 +52,31 @@ namespace socketry
             }
         }
 
+        /// <summary>
+        /// Function to get all remote procedures names
+        /// </summary>
         public void GetRemoteProceduresNames()
         {
             byte[] initResponse = null;
             try
             {
-            Console.WriteLine($"1");
+                Console.WriteLine($"1");
                 initResponse = MakeRemoteCall((byte)0, new byte[0], 0).Task.Result;
-            Console.WriteLine($"2");
+                Console.WriteLine($"2");
             }
-            catch (AggregateException ex) {
-            Console.WriteLine($"3");
+            catch (AggregateException ex)
+            {
+                Console.WriteLine($"3");
                 Console.WriteLine($"Aggregrate exception {ex.ToString()}");
-            Console.WriteLine($"4");
+                Console.WriteLine($"4");
             }
             Console.WriteLine($"init response {initResponse.Length}");
             List<String> remoteProceduresNameList = new List<String>();
             StringBuilder currentName = new StringBuilder();
-            foreach(byte b in initResponse){
-                if (b == 0) { 
+            foreach (byte b in initResponse)
+            {
+                if (b == 0)
+                {
                     remoteProceduresNameList.Add(currentName.ToString());
                     currentName = new StringBuilder();
                 }
@@ -75,34 +85,47 @@ namespace socketry
                     currentName.Append((char)b);
                 }
             }
-            _remoteprocedureNames = remoteProceduresNameList.ToArray(); 
+            _remoteprocedureNames = remoteProceduresNameList.ToArray();
         }
 
+        /// <summary>
+        /// Function to listen continuously
+        /// </summary>
         public void ListenLoop()
         {
             try
             {
                 StartListening();
             }
-            catch (Exception e) {
-                // print trace
-            } 
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
+        /// <summary>
+        /// Function to listen for all packets.
+        /// </summary>
         public void StartListening()
         {
             while (true)
             {
-                foreach (Tunnel tunnel in _tunnels) {
+                foreach (Tunnel tunnel in _tunnels)
+                {
                     List<Packet> unhandledPackets = tunnel.Listen();
                     unhandledPackets.ForEach(packet =>
                     {
                         HandlePacket(packet, tunnel);
                     });
                 }
-            } 
+            }
         }
 
+        /// <summary>
+        /// Function to handle each packets.
+        /// </summary>
+        /// <param name="packet">The packet to be handled</param>
+        /// <param name="tunnel">The tunnel to send it </param>
         public void HandlePacket(Packet packet, Tunnel tunnel)
         {
             switch (packet)
@@ -116,7 +139,7 @@ namespace socketry
                             byte[] response = HandleRemoteCall(callPacket.fnId, callPacket.arguments);
                             responsePacket = new Packet.Result(callPacket.fnId, callPacket.callId, response);
                         }
-                        catch (Exception e) 
+                        catch (Exception e)
                         {
                             responsePacket = new Packet.Error(callPacket.fnId, callPacket.callId, Encoding.UTF8.GetBytes(e.Message));
                         }
@@ -136,17 +159,28 @@ namespace socketry
             }
         }
 
+        /// <summary>
+        /// Function to calla remote procedure.
+        /// </summary>
+        /// <param name="fnId">the function id to call</param>
+        /// <param name="data">the data to send</param>
+        /// <returns>the result of the data</returns>
         public byte[] HandleRemoteCall(byte fnId, byte[] data)
         {
             Func<byte[], byte[]> procedure = _procedures[_procedureNames[fnId]];
             Console.WriteLine($"Fn: {procedure.ToString()} {data}");
-            if(procedure == null)
+            if (procedure == null)
             {
                 Console.WriteLine("Required procedure does not exists...");
             }
-            return (byte[]) procedure(data);
+            return (byte[])procedure(data);
         }
 
+        /// <summary>
+        /// Function to get remote procedures id
+        /// </summary>
+        /// <param name="name">the name of preocdure</param>
+        /// <returns>the function id</returns>
         public byte GetRemoteProceduresId(String name)
         {
             if (_remoteprocedureNames == null)
@@ -160,8 +194,8 @@ namespace socketry
 
                 Console.WriteLine(_remoteprocedureNames[0]);
             }
-            
-            for( byte i=0; i<_remoteprocedureNames.Length;i++)
+
+            for (byte i = 0; i < _remoteprocedureNames.Length; i++)
             {
                 if (_remoteprocedureNames[i].Equals(name))
                 {
@@ -172,11 +206,19 @@ namespace socketry
             return 0;
             // in java throws error
         }
+
+        /// <summary>
+        /// Function to make a function call
+        /// </summary>
+        /// <param name="fnId">the function id</param>
+        /// <param name="data">the data to send</param>
+        /// <param name="tunnnelId">the tunnel to send to</param>
+        /// <returns></returns>
         public TaskCompletionSource<byte[]> MakeRemoteCall(byte fnId, byte[] data, int tunnnelId)
         {
-            if(tunnnelId < 0 || tunnnelId >= _tunnels.Length)
+            if (tunnnelId < 0 || tunnnelId >= _tunnels.Length)
             {
-                // Throw error
+                throw new Exception($"Unexpected tunnel id {tunnnelId}...");
             }
 
             Tunnel tnl = _tunnels[tunnnelId];

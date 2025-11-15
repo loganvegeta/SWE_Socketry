@@ -1,12 +1,13 @@
 ﻿using packetparser;
 using socket;
-using System.Collections;
 using System.Collections.Concurrent;
 using System.Net;
-using System.Threading;
 
 namespace socketry
 {
+    /// <summary>
+    /// Class to create a new link.
+    /// </summary>
     public class Link
     {
         ISocket _clientChannel;
@@ -16,6 +17,10 @@ namespace socketry
 
         private ConcurrentQueue<Packet> _packets;
 
+        /// <summary>
+        /// Constructor for Link Class
+        /// </summary>
+        /// <param name="port">the port to start the link at</param>
         public Link(int port)
         {
             _clientChannel = new SocketTCP();
@@ -25,6 +30,10 @@ namespace socketry
             _packets = new ConcurrentQueue<Packet>();
         }
 
+        /// <summary>
+        /// Constructor for Link class
+        /// </summary>
+        /// <param name="_connectedChannel">the socket to start the link on</param>
         public Link(ISocket _connectedChannel)
         {
             _clientChannel = _connectedChannel;
@@ -32,11 +41,19 @@ namespace socketry
             _packets = new ConcurrentQueue<Packet>();
         }
 
+        /// <summary>
+        /// Function to set the blocking state of the socket.
+        /// </summary>
+        /// <param name="to_block">the state to set to</param>
         public void ConfigureBlocking(bool to_block)
         {
             _clientChannel.ConfigureBlocking(to_block);
         }
 
+        /// <summary>
+        /// Function to register the socket to the selector.
+        /// </summary>
+        /// <param name="selector">The selector to register with</param>
         public void Register(Selector selector)
         {
             if (_clientChannel != null)
@@ -45,6 +62,10 @@ namespace socketry
             }
         }
 
+        /// <summary>
+        /// Function to read data from the sockets
+        /// </summary>
+        /// <returns>The stream containing the data read</returns>
         private MemoryStream ReadData()
         {
             int bufferLength = 1024;
@@ -67,6 +88,10 @@ namespace socketry
             return readBuffer;
         }
 
+        /// <summary>
+        /// Function to get all the received packets.
+        /// </summary>
+        /// <returns>the list of all packets</returns>
         public List<Packet> GetPackets()
         {
             try
@@ -83,6 +108,9 @@ namespace socketry
             return packets;
         }
 
+        /// <summary>
+        /// Function to read and parse all packets
+        /// </summary>
         void ReadAndParseAllPackets()
         {
             bool initialState = _clientChannel.IsBlocking();
@@ -97,11 +125,17 @@ namespace socketry
             _clientChannel.ConfigureBlocking(initialState);
         }
 
+        /// <summary>
+        /// Function to get the length.
+        /// </summary>
+        /// <param name="data">the data to read</param>
+        /// <param name="pos">the position of data</param>
+        /// <returns></returns>
         static int ReadInt(byte[] data, int pos)
         {
             if (data.Length < pos)
             {
-                // TODO: Throw an exception
+                throw new ArgumentException("Expected more data...");
             }
             return ((data[pos] & 0xFF) << 24) |
                 ((data[pos + 1] & 0xFF) << 16) |
@@ -109,13 +143,17 @@ namespace socketry
                 (data[pos + 3] & 0xFF);
         }
 
+        /// <summary>
+        /// Function to parse packets
+        /// </summary>
+        /// <returns>the length of data parsed</returns>
         int ReadAndParsePackets()
         {
             MemoryStream buffer = ReadData();
             Console.WriteLine("Read from socket...");
             int remaining = (int)(buffer.Length - buffer.Position);
             byte[] data = new byte[remaining];
-            buffer.Read(data,0,remaining);
+            buffer.Read(data, 0, remaining);
 
             int currDatapos = 0;
             int len = data.Length;
@@ -151,6 +189,10 @@ namespace socketry
             return data.Length;
         }
 
+        /// <summary>
+        /// Function to get all packets
+        /// </summary>
+        /// <returns>The received packet</returns>
         public Packet GetPacket()
         {
             try
@@ -167,6 +209,11 @@ namespace socketry
             return packet;
         }
 
+        /// <summary>
+        /// Function to send packet.
+        /// </summary>
+        /// <param name="packet">The packet to send to</param>
+        /// <returns>The state of the packet</returns>
         public bool SendPacket(Packet packet)
         {
             byte[] packetData = Packet.Serialize(packet).ToArray();

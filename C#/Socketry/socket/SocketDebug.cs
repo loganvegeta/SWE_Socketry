@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Pipes;
-using System.Linq;
+﻿using System.IO.Pipes;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace socket
 {
@@ -33,7 +28,7 @@ namespace socket
 
         public int Read(MemoryStream dst)
         {
-            int r =readPipe.Read(dst.GetBuffer());
+            int r = readPipe.Read(dst.GetBuffer());
             return r;
         }
 
